@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Slider from '@react-native-community/slider';
 import React, {useState} from 'react';
+import DiceSlider from './diceSlider';
 
 export default function App() {
     const [attacks, setAttacks] = useState(0);
@@ -11,62 +12,26 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Number of attacks:</Text>
-      <Slider
-        style={{width : 200, height: 40}}
-        onValueChange={setAttacks}
-        step={1}
-        minimumValue={0}
-        maximumValue={40}
-        minimumTrackTintColor='#000000'
-        maximumTrackTintColor='#FFFFFF'
-      />
+      <DiceSlider max={40} updater={setAttacks}/>
           <Text>
               {attacks}
           </Text>
       <Text>Needed to roll to hit:</Text>
-          <Slider
-              style={{ width: 200, height: 40 }}
-              onValueChange={setHitChance}
-              step={1}
-              value={3}
-              minimumValue={2}
-              maximumValue={6}
-              minimumTrackTintColor='#000000'
-              maximumTrackTintColor='#FFFFFF'
-          />
+          <DiceSlider max={6} updater={setHitChance} />
           <Text>
               {hitChance}
           </Text>
 
-          <Text>What do 6s to hit give you?</Text>
           <Text>Default wound roll:</Text>
-          <Slider
-              style={{ width: 200, height: 40 }}
-              onValueChange={setWoundChance}
-              step={1}
-              value={3}
-              minimumValue={2}
-              maximumValue={6}
-              minimumTrackTintColor='#000000'
-              maximumTrackTintColor='#FFFFFF'
-          />
+          <DiceSlider max={6} updater={setWoundChance} />
           <Text>
               {woundChance}
           </Text>
 
           <Text>Opponents default saving roll:</Text>
-          <Slider
-              style={{ width: 200, height: 40 }}
-              onValueChange={setSaveChance}
-              step={1}
-              value={3}
-              minimumValue={2}
-              maximumValue={6}
-              minimumTrackTintColor='#000000'
-              maximumTrackTintColor='#FFFFFF'
-          />
+          <DiceSlider max={6} updater={setSaveChance} />
           <Text>
-              {woundChance}
+              {saveChance}
           </Text>
       <StatusBar style="auto" />
     </View>
