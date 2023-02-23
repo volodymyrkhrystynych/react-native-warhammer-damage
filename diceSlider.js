@@ -10,7 +10,7 @@ function DiceSlider(props){
             style={{ width: 200, height: 40 }}
             onValueChange={props.updater}
             step={1}
-            value={1}
+            value={props.value}
             minimumValue={1}
             maximumValue={props.max}
             minimumTrackTintColor='#000000'
@@ -18,5 +18,10 @@ function DiceSlider(props){
         />
     )
 };
+
+// setting default value to 1
+DiceSlider.defaultprops={
+    value:1
+}
 
 export default DiceSlider;

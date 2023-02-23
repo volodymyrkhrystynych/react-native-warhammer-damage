@@ -13,6 +13,9 @@ function DamageCalculator(props) {
     var negativeSigma = wounds - sigma;
     var positiveSigma = wounds + sigma;
 
+    if (negativeSigma < 0) {
+        negativeSigma = 0;
+    }
 
     return (
             <>

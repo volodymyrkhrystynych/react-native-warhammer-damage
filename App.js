@@ -9,7 +9,7 @@ export default function App() {
     const [attacks, setAttacks] = useState(1);
     const [hitChance, setHitChance] = useState(1);
     const [woundChance, setWoundChance] = useState(1);
-    const [saveChance, setSaveChance] = useState(1);
+    const [saveChance, setSaveChance] = useState(3);
   return (
     <View style={styles.container}>
       <Text>Number of attacks: {attacks}</Text>
@@ -22,7 +22,7 @@ export default function App() {
           <DiceSlider max={6} updater={setWoundChance} />
 
           <Text>Opponents default saving roll: {saveChance}+</Text>
-          <DiceSlider max={7} updater={setSaveChance} />
+      <DiceSlider max={7} value={3} updater={setSaveChance} />
           <DamageCalculator attacks={attacks} hitchance={hitChance} woundchance={woundChance} savechance={saveChance}/>
       <StatusBar style="auto" />
     </View>
