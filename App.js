@@ -28,7 +28,7 @@ export default function App() {
           <Text>Needed to roll to hit: {hitChance}+</Text>
           <DiceSlider max={6} updater={setHitChance} />
 
-          <Text>Reroll failed hit roll of: 0 - {rerollHitOf}</Text>
+          <Text>Reroll hit roll of: 0 - {rerollHitOf}</Text>
       <DiceSlider max={6} value={0} minimum={0} updater={setRerollHitOf} />
 
           <Text>Roll to autowound: {autoWoundChance}+</Text>
@@ -40,7 +40,7 @@ export default function App() {
           <Text>Default wound roll: {woundChance}+</Text>
           <DiceSlider max={6} updater={setWoundChance} />
 
-          <Text>Reroll failed wound roll of: 0 - {rerollWoundOf}</Text>
+          <Text>Reroll wound roll of: 0 - {rerollWoundOf}</Text>
       <DiceSlider max={6} value={0} minimum={0} updater={setRerollWoundOf} />
 
           <Text>Amount of extra AP on a 6: {extraAP}</Text>
