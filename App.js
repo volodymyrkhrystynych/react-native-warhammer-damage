@@ -29,7 +29,7 @@ export default function App() {
           <DiceSlider max={6} updater={setHitChance} />
 
           <Text>Reroll hit roll of: 0 - {rerollHitOf}</Text>
-      <DiceSlider max={6} value={0} minimum={0} updater={setRerollHitOf} />
+      <DiceSlider max={5} value={0} minimum={0} updater={setRerollHitOf} />
 
           <Text>Roll to autowound: {autoWoundChance}+</Text>
           <DiceSlider max={7} value={7} updater={setAutoWoundChance} />
@@ -41,7 +41,7 @@ export default function App() {
           <DiceSlider max={6} updater={setWoundChance} />
 
           <Text>Reroll wound roll of: 0 - {rerollWoundOf}</Text>
-      <DiceSlider max={6} value={0} minimum={0} updater={setRerollWoundOf} />
+      <DiceSlider max={5} value={0} minimum={0} updater={setRerollWoundOf} />
 
           <Text>Amount of extra AP on a 6: {extraAP}</Text>
           <DiceSlider max={6} value={0} minimum={0} updater={setExtraAP} />
@@ -54,7 +54,7 @@ export default function App() {
                             autoWoundChance={autoWoundChance}
                             explodingSixes={explodingSixes}
                             rerollWoundOf={rerollWoundOf}
-                            extraAp={extraAP}
+                            extraAP={extraAP}
                             woundchance={woundChance}
                             savechance={saveChance}/>
       <StatusBar style="auto" />

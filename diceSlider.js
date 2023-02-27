@@ -20,7 +20,7 @@ function DiceSlider(props){
 };
 
 // setting default value to 1
-DiceSlider.defaultprops={
+DiceSlider.defaultProps={
     value:1,
     minimum:1
 }
