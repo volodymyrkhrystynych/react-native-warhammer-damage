@@ -22,41 +22,41 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+          <DamageCalculator attacks={attacks}
+              hitchance={hitChance}
+              rerollHitOf={rerollHitOf}
+              autoWoundChance={autoWoundChance}
+              explodingSixes={explodingSixes}
+              rerollWoundOf={rerollWoundOf}
+              extraAP={extraAP}
+              woundchance={woundChance}
+              savechance={saveChance} />
       <Text>Number of attacks: {attacks}</Text>
-      <DiceSlider max={40} updater={setAttacks}/>
+      <DiceSlider name={'Attacks'} max={40} value={attacks} updater={setAttacks}/>
 
           <Text>Needed to roll to hit: {hitChance}+</Text>
-          <DiceSlider max={6} updater={setHitChance} />
+          <DiceSlider name={'Hit'} max={6} value={hitChance} updater={setHitChance} />
 
-          <Text>Reroll hit roll of: 0 - {rerollHitOf}</Text>
-      <DiceSlider max={5} value={0} minimum={0} updater={setRerollHitOf} />
+          <Text>Reroll hit rolls of: {rerollHitOf}-</Text>
+          <DiceSlider name={'Reroll Hits'} max={5} value={rerollHitOf} minimum={0} updater={setRerollHitOf} />
 
           <Text>Roll to autowound: {autoWoundChance}+</Text>
-          <DiceSlider max={7} value={7} updater={setAutoWoundChance} />
+          <DiceSlider name={'Auto Wound'} max={7} value={autoWoundChance} updater={setAutoWoundChance} />
 
           <Text>Number of extra hits on a 6: {explodingSixes}</Text>
-          <DiceSlider max={6} value={0} minimum={0} updater={ExplodingSixesNumber} />
+          <DiceSlider name={'Exploding 6s'} max={6} value={explodingSixes} minimum={0} updater={ExplodingSixesNumber} />
 
           <Text>Default wound roll: {woundChance}+</Text>
-          <DiceSlider max={6} updater={setWoundChance} />
+          <DiceSlider name={'Wound'} max={6} value={woundChance} updater={setWoundChance} />
 
-          <Text>Reroll wound roll of: 0 - {rerollWoundOf}</Text>
-      <DiceSlider max={5} value={0} minimum={0} updater={setRerollWoundOf} />
+          <Text>Reroll wound rolls of: {rerollWoundOf}-</Text>
+          <DiceSlider name={'Reroll Wounds'} max={5} value={rerollWoundOf} minimum={0} updater={setRerollWoundOf} />
 
           <Text>Amount of extra AP on a 6: {extraAP}</Text>
-          <DiceSlider max={6} value={0} minimum={0} updater={setExtraAP} />
+          <DiceSlider name={'6s Extra AP'} max={6} value={extraAP} minimum={0} updater={setExtraAP} />
 
           <Text>Opponents default saving roll: {saveChance}+</Text>
-      <DiceSlider max={7} value={3} updater={setSaveChance} />
-          <DamageCalculator attacks={attacks}
-                            hitchance={hitChance}
-                            rerollHitOf={rerollHitOf}
-                            autoWoundChance={autoWoundChance}
-                            explodingSixes={explodingSixes}
-                            rerollWoundOf={rerollWoundOf}
-                            extraAP={extraAP}
-                            woundchance={woundChance}
-                            savechance={saveChance}/>
+          <DiceSlider name={'Save'} max={7} value={saveChance} updater={setSaveChance} />
       <StatusBar style="auto" />
     </View>
   );
