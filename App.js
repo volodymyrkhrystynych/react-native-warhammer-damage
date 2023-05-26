@@ -40,11 +40,11 @@ export default function App() {
           <Text>Reroll hit rolls of: {rerollHitOf}-</Text>
           <DiceSlider name={'Reroll Hits'} max={5} value={rerollHitOf} minimum={0} updater={setRerollHitOf} />
 
-          <Text>Roll to autowound: {autoWoundChance}+</Text>
-          <DiceSlider name={'Auto Wound'} max={7} value={autoWoundChance} updater={setAutoWoundChance} />
+      <Text>Lethal Hits on {autoWoundChance}+</Text>
+          <DiceSlider name={'Lethal Hits'} max={7} value={autoWoundChance} updater={setAutoWoundChance} />
 
-          <Text>Number of extra hits on a 6: {explodingSixes}</Text>
-          <DiceSlider name={'Exploding 6s'} max={6} value={explodingSixes} minimum={0} updater={ExplodingSixesNumber} />
+          <Text>Sustained Hits {explodingSixes}</Text>
+          <DiceSlider name={'Sustained Hits'} max={6} value={explodingSixes} minimum={0} updater={ExplodingSixesNumber} />
 
           <Text>Default wound roll: {woundChance}+</Text>
           <DiceSlider name={'Wound'} max={6} value={woundChance} updater={setWoundChance} />

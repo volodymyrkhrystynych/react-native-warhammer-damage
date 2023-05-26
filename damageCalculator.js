@@ -4,13 +4,12 @@ import { StyleSheet, Text, View } from 'react-native';
 function DamageCalculator(props) {
     var attacks = props.attacks;
 
-    var autowoundchance = 1 - (props.autoWoundChance - 1) / 6;
-    var hitchance = 1 - (props.hitchance - 1) / 6 - autowoundchance;
+    var autowoundchance = (7 - props.autoWoundChance) / 6;
+    var hitchance = (7- props.hitchance) / 6 - autowoundchance;
     var rerollhitof = props.rerollHitOf / 6;
-    
 
     var rerollwoundof = props.rerollWoundOf / 6;
-    var woundchance = 1-(props.woundchance-1)/6;
+    var woundchance = (7 - props.woundchance)/6;
 
     var failedsavechance = (props.savechance-1)/6;
 
@@ -28,7 +27,7 @@ function DamageCalculator(props) {
         ((attacks + numberoffailedhits) * props.explodingSixes)/6 +
         numberoffailedhits*hitchance;
     
-    var autowounds = (1 - (props.autoWoundChance - 1) / 6)*attacks;
+    var autowounds = autowoundchance*attacks;
     
     // wound rolls
 
@@ -41,7 +40,7 @@ function DamageCalculator(props) {
     var numberofwounds = numberofhits*(firstwoundroll +
         rerollwoundof * woundchance) + autowounds;
     
-    var woundsixes = (numberofhits + numberofhits*(1-firstwoundroll))/6;
+    var woundsixes = (numberofhits + numberofhits*rerollwoundof)/6;
     var wounds = (numberofwounds - woundsixes) * failedsavechance +
         woundsixes*failedsavechancewithextraap;
 
