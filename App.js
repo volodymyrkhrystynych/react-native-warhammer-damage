@@ -31,6 +31,7 @@ export default function App() {
               extraAP={extraAP}
               woundchance={woundChance}
               savechance={saveChance} />
+          <Text>-----------------------------</Text>
       <Text>Number of attacks: {attacks}</Text>
       <DiceSlider name={'Attacks'} max={40} value={attacks} updater={setAttacks}/>
 
