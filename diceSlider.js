@@ -1,5 +1,5 @@
-import {Slider} from '@miblanchard/react-native-slider';
-//import Slider from '@react-native-community/slider';
+//import {Slider} from '@miblanchard/react-native-slider';
+import Slider from '@react-native-community/slider';
 import React, { useState } from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
@@ -30,14 +30,11 @@ function DiceSlider(props){
     return (
         <View style = {{ width: 300, height: 40 }}>
             <Slider
-              animateTransitions
-            onValueChange={value => props.updater(value)}
+                onValueChange={value => props.updater(value)}
                 step={1}
                 value={props.value}
                 minimumValue={props.minimum}
                 maximumValue={props.max}
-              renderThumbComponent={CustomThumb}
-              trackStyle={customTrack}
             />
         </View>
     )
