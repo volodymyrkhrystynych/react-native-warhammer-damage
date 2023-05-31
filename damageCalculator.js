@@ -4,6 +4,9 @@ import { StyleSheet, Text, View } from 'react-native';
 function DamageCalculator(props) {
     var attacks = props.attacks;
 
+    // Since the return value is a number from 1-6 and we want
+    // the percentage to be 2/6 when a 5+ is given means that means that
+    // (7-number)/6 is the proper way to get the chance
     var autowoundchance = (7 - props.autoWoundChance) / 6;
     var hitchance = (7- props.hitchance) / 6 - autowoundchance;
     var rerollhitof = props.rerollHitOf / 6;
@@ -16,7 +19,7 @@ function DamageCalculator(props) {
     var failedsavechancewithextraap = (props.savechance - 1 + props.extraAP) / 6;
     if (failedsavechancewithextraap > 1){failedsavechancewithextraap = 1;}
 
-    //hit rolls
+    // Hit rolls section
     var firsthitchance = hitchance;
     if (rerollhitof + hitchance > 1){
         firsthitchance = 1 - rerollhitof;
@@ -29,8 +32,7 @@ function DamageCalculator(props) {
     
     var autowounds = autowoundchance*attacks;
     
-    // wound rolls
-
+    // Wound rolls section
     // making sure to reroll, even if wound is successful
     var firstwoundroll = woundchance;
     if (firstwoundroll + rerollwoundof > 1){
